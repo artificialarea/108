@@ -1,29 +1,9 @@
-@-webkit-keyframes rotating {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
 @keyframes rotating {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
-  }
-}
-@-webkit-keyframes blink {
-  0% {
-    opacity: 0.5;
-  }
-  100% {
-    opacity: 1;
+    transform: rotate(360deg);
   }
 }
 @keyframes blink {
@@ -35,8 +15,7 @@
   }
 }
 .animation--blink {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 *,
 *::before,
@@ -71,12 +50,9 @@ body::after {
   border-radius: 50%;
   opacity: 0;
   pointer-events: none;
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
-  -webkit-transition-property: opacity, -webkit-filter, opacity, filter;
-          transition-property: opacity, filter;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  transition-duration: 150ms;
+  transition-property: opacity, filter;
+  transition-timing-function: ease;
 }
 .visible--intro body::after {
   opacity: 1;
@@ -84,10 +60,8 @@ body::after {
 .resizing body::after {
   border-style: dashed;
   opacity: 1;
-  -webkit-animation: rotating 3s infinite linear;
-          animation: rotating 3s infinite linear;
-  -webkit-transition-duration: 750ms;
-          transition-duration: 750ms;
+  animation: rotating 3s infinite linear;
+  transition-duration: 750ms;
 }
 a {
   color: inherit;
@@ -97,8 +71,7 @@ p > a {
   border-bottom: 1px solid currentColor;
 }
 p > a:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 h1,
 h2,
@@ -122,8 +95,7 @@ h4 > span {
   border-radius: 3px;
 }
 .button:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .key {
   display: inline-block;
@@ -138,8 +110,7 @@ h4 > span {
 }
 @media screen and (orientation: portrait) and (max-width: 460px) {
   .button:hover {
-    -webkit-animation: none;
-            animation: none;
+    animation: none;
   }
 }
 h1 {
@@ -163,18 +134,15 @@ h1 {
   height: 70vh;
   margin: calc( -35vh - 2.5rem ) 0 0 -35vh;
   overflow: hidden;
-  -webkit-transition: opacity 750ms ease;
-          transition: opacity 750ms ease;
+  transition: opacity 750ms ease;
 }
 .resizing .timeline-wrapper {
   opacity: 0;
-  -webkit-transition-duration: 150ms;
-          transition-duration: 150ms;
+  transition-duration: 150ms;
 }
 .timeline-wrapper > svg {
   display: block;
-  -webkit-transform-origin: 0 0;
-          transform-origin: 0 0;
+  transform-origin: 0 0;
 }
 #placeholder {
   display: none;
@@ -204,14 +172,11 @@ h1 {
   padding: 0.5rem 0.5rem;
   font-size: 0.875rem;
   line-height: 1;
-  -webkit-transition: all 300ms ease;
-          transition: all 300ms ease;
-  -webkit-transform: translateY(100%);
-          transform: translateY(100%);
+  transition: all 300ms ease;
+  transform: translateY(100%);
 }
 .visible--ui-controls .ui--controls {
-  -webkit-transform: translateY(0);
-          transform: translateY(0);
+  transform: translateY(0);
 }
 .ui-toggle--controls {
   position: absolute;
@@ -235,8 +200,7 @@ h1 {
   border-radius: 50%;
 }
 .ui-toggle--controls:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .visible--ui-controls .ui-toggle--controls {
   opacity: 1;
@@ -245,8 +209,6 @@ h1 {
   background: #fff;
 }
 .button-row {
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
 }
@@ -257,26 +219,20 @@ h1 {
   background: rgba(255, 255, 255, 0.01);
   border: 1px solid currentColor;
   border-radius: 3px;
-  -webkit-box-flex: 1;
-  -webkit-flex-grow: 1;
-      -ms-flex-positive: 1;
-          flex-grow: 1;
+  -ms-flex-positive: 1;
+      flex-grow: 1;
   height: 4rem;
   margin: 0.5rem;
   padding: 0.65rem 0.7rem;
 }
 .control-button:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .control-button--narrow {
-  -webkit-box-flex: 0;
-  -webkit-flex-grow: 0;
-      -ms-flex-positive: 0;
-          flex-grow: 0;
-  -webkit-flex-shrink: 0;
-      -ms-flex-negative: 0;
-          flex-shrink: 0;
+  -ms-flex-positive: 0;
+      flex-grow: 0;
+  -ms-flex-negative: 0;
+      flex-shrink: 0;
   width: 4rem;
 }
 .control-button--no-feedback:active,
@@ -293,29 +249,22 @@ h1 {
 }
 @media screen and (max-width: 656px) {
   .control-button {
-    -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
   .control-button--narrow {
-    -webkit-flex-shrink: 1;
-        -ms-flex-negative: 1;
-            flex-shrink: 1;
-    -webkit-box-flex: 1;
-    -webkit-flex-grow: 1;
-        -ms-flex-positive: 1;
-            flex-grow: 1;
+    -ms-flex-negative: 1;
+        flex-shrink: 1;
+    -ms-flex-positive: 1;
+        flex-grow: 1;
   }
 }
 @media screen and (max-width: 460px) {
   .button-row {
-    -webkit-flex-wrap: wrap;
-        -ms-flex-wrap: wrap;
-            flex-wrap: wrap;
+    -ms-flex-wrap: wrap;
+        flex-wrap: wrap;
   }
   .control-button {
     min-width: calc( 20vw - 1.5rem );
@@ -340,24 +289,19 @@ h1 {
   text-transform: uppercase;
   color: inherit;
   opacity: 0.5;
-  -webkit-transition: all 300ms ease;
-          transition: all 300ms ease;
+  transition: all 300ms ease;
 }
 .ui-toggle--share:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .visible--ui-controls .ui-toggle--share {
-  -webkit-transform: translateY(-6rem);
-          transform: translateY(-6rem);
+  transform: translateY(-6rem);
 }
 .visible--ui-share .ui-modal--share {
   height: 100%;
   opacity: 1;
-  -webkit-transition-duration: 250ms, 100ms;
-          transition-duration: 250ms, 100ms;
-  -webkit-transition-delay: 0ms, 0ms;
-          transition-delay: 0ms, 0ms;
+  transition-duration: 250ms, 100ms;
+  transition-delay: 0ms, 0ms;
 }
 .ui-modal--share .ui-modal-content {
   width: 32rem;
@@ -375,8 +319,7 @@ h1 {
   padding: 0 4rem 0 0;
 }
 .share-url:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .share-url::after {
   content: ' ';
@@ -388,14 +331,12 @@ h1 {
   width: 2rem;
   margin-right: 4rem;
   margin-bottom: 1px;
-  background: -webkit-linear-gradient(0deg, rgba(37, 37, 41, 0) 0%, #252529 90%);
   background: linear-gradient(90deg, rgba(37, 37, 41, 0) 0%, #252529 90%);
 }
 .share-url:hover,
 .share-url:focus {
   background: transparent !important;
-  -webkit-animation: none !important;
-          animation: none !important;
+  animation: none !important;
 }
 .share-url-input {
   -webkit-appearance: none;
@@ -433,19 +374,16 @@ h1 {
   border-radius: 0;
 }
 .share-url-button:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 @media screen and (max-width: 460px) {
   .visible--ui-controls .ui-toggle--share {
-    -webkit-transform: translateY(-11rem);
-            transform: translateY(-11rem);
+    transform: translateY(-11rem);
   }
 }
 @media screen and (max-height: 480px) {
   .visible--ui-controls .ui-toggle--share {
-    -webkit-transform: translateY(-9rem);
-            transform: translateY(-9rem);
+    transform: translateY(-9rem);
   }
 }
 .ui-toggle--info {
@@ -461,16 +399,13 @@ h1 {
   opacity: 0.5;
 }
 .ui-toggle--info:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 .visible--ui-info .ui-modal--info {
   height: 100%;
   opacity: 1;
-  -webkit-transition-duration: 250ms, 100ms;
-          transition-duration: 250ms, 100ms;
-  -webkit-transition-delay: 0ms, 0ms;
-          transition-delay: 0ms, 0ms;
+  transition-duration: 250ms, 100ms;
+  transition-delay: 0ms, 0ms;
 }
 .ui-indicator-recorder {
   position: absolute;
@@ -482,14 +417,10 @@ h1 {
   height: 2rem;
   margin: -1rem 0 0 -1rem;
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
-  -webkit-transition-property: opacity, -webkit-transform;
-          transition-property: opacity, transform;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  transform: scale(0);
+  transition-property: opacity, transform;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
 }
 .ui-indicator-recorder::before,
 .ui-indicator-recorder::after {
@@ -503,40 +434,32 @@ h1 {
   display: block;
   margin: 0;
   border-radius: 50%;
-  -webkit-transition-duration: 250ms;
-          transition-duration: 250ms;
-  -webkit-transition-timing-function: ease-in-out;
-          transition-timing-function: ease-in-out;
+  transition-duration: 250ms;
+  transition-timing-function: ease-in-out;
 }
 .ui-indicator-recorder::before {
   margin: -6px;
   border-style: solid;
   border-width: 1.5px;
-  -webkit-transition-property: background, border;
-          transition-property: background, border;
-  -webkit-animation: processing infinite 1800ms linear;
-          animation: processing infinite 1800ms linear;
+  transition-property: background, border;
+  animation: processing infinite 1800ms linear;
 }
 .ui-indicator-recorder::after {
   background-color: #ff0f36;
-  -webkit-transition-property: opacity, -webkit-transform;
-          transition-property: opacity, transform;
+  transition-property: opacity, transform;
   opacity: 0;
-  -webkit-transform: scale(0);
-          transform: scale(0);
+  transform: scale(0);
 }
 .ui-indicator-recorder.visible {
   opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 .ui-indicator-recorder.visible--recording::before {
   border-color: #ff0f36 transparent transparent transparent;
 }
 .ui-indicator-recorder.visible--recording::after {
   opacity: 1;
-  -webkit-transform: scale(1);
-          transform: scale(1);
+  transform: scale(1);
 }
 .ui-indicator-recorder.visible--processing::before {
   border-color: #ff0f36 #fff #fff #fff;
@@ -544,58 +467,26 @@ h1 {
 .ui-indicator-recorder.visible--processing::after {
   opacity: 0;
 }
-@-webkit-keyframes recording {
-  0% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-  50% {
-    opacity: 0.5;
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
-  }
-  100% {
-    opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
 @keyframes recording {
   0% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
+    transform: scale(1);
   }
   50% {
     opacity: 0.5;
-    -webkit-transform: scale(1.25);
-            transform: scale(1.25);
+    transform: scale(1.25);
   }
   100% {
     opacity: 1;
-    -webkit-transform: scale(1);
-            transform: scale(1);
-  }
-}
-@-webkit-keyframes processing {
-  0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
-  }
-  100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: scale(1);
   }
 }
 @keyframes processing {
   0% {
-    -webkit-transform: rotate(0deg);
-            transform: rotate(0deg);
+    transform: rotate(0deg);
   }
   100% {
-    -webkit-transform: rotate(360deg);
-            transform: rotate(360deg);
+    transform: rotate(360deg);
   }
 }
 .ui-modal {
@@ -604,39 +495,27 @@ h1 {
   right: 0;
   top: 0;
   z-index: 1000;
-  display: -webkit-box;
-  display: -webkit-flex;
   display: -ms-flexbox;
   display: flex;
-  -webkit-box-pack: center;
-  -webkit-justify-content: center;
-      -ms-flex-pack: center;
-          justify-content: center;
-  -webkit-box-align: center;
-  -webkit-align-items: center;
-      -ms-flex-align: center;
-          align-items: center;
+  -ms-flex-pack: center;
+      justify-content: center;
+  -ms-flex-align: center;
+      align-items: center;
   height: 0;
   background: rgba(37, 37, 41, 0.9);
   overflow: hidden;
   opacity: 0;
-  -webkit-transition-property: opacity, bottom;
-          transition-property: opacity, bottom;
-  -webkit-transition-duration: 250ms, 100ms;
-          transition-duration: 250ms, 100ms;
-  -webkit-transition-delay: 0ms, 250ms;
-          transition-delay: 0ms, 250ms;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  transition-property: opacity, bottom;
+  transition-duration: 250ms, 100ms;
+  transition-delay: 0ms, 250ms;
+  transition-timing-function: ease;
 }
 .ui-modal:target,
 .ui-modal.visible {
   height: 100%;
   opacity: 1;
-  -webkit-transition-duration: 250ms, 100ms;
-          transition-duration: 250ms, 100ms;
-  -webkit-transition-delay: 0ms, 0ms;
-          transition-delay: 0ms, 0ms;
+  transition-duration: 250ms, 100ms;
+  transition-delay: 0ms, 0ms;
 }
 .ui-modal-content {
   display: block;
@@ -670,8 +549,7 @@ h1 {
   color: inherit;
 }
 .ui-modal-close:hover {
-  -webkit-animation: blink 150ms steps(2) infinite;
-          animation: blink 150ms steps(2) infinite;
+  animation: blink 150ms steps(2) infinite;
 }
 @media screen and (max-height: 480px) {
   .ui-modal-content {
@@ -687,18 +565,14 @@ h1 {
   background: #252529;
   pointer-events: none;
   opacity: 0;
-  -webkit-transition-duration: 750ms;
-          transition-duration: 750ms;
-  -webkit-transition-property: opacity, -webkit-transform;
-          transition-property: opacity, transform;
-  -webkit-transition-timing-function: ease;
-          transition-timing-function: ease;
+  transition-duration: 750ms;
+  transition-property: opacity, transform;
+  transition-timing-function: ease;
 }
 .visible--intro .intro {
   z-index: 1000;
   opacity: 1;
-  -webkit-transition: none;
-          transition: none;
+  transition: none;
 }
 .intro-title {
   position: absolute;
@@ -709,6 +583,5 @@ h1 {
   font-size: 0.875rem;
   font-weight: 400;
   line-height: 1;
-  -webkit-transform: translate(-50%, -50%);
-          transform: translate(-50%, -50%);
+  transform: translate(-50%, -50%);
 }
